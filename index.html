@@ -11,12 +11,91 @@
         <h1>Foto Kiosk</h1>
     </header>
     <main>
-        <div class="photo-row">
-            <div class="photo-card">
+        <div class="photos">
+            <div class="photo-row">
+                <div class="photo-card">
+                    <img src="fotos/0_Zondag/10_05_30_id8824.jpg" alt="Foto 1234">
+                    <p>1234</p>
+                </div>
+                <div class="photo-card">
+                    <img src="fotos/0_Zondag/10_05_30_id8824.jpg" alt="Foto 1235">
+                    <p>1235</p>
+                </div>
+                <div class="photo-card">
+                    <img src="fotos/0_Zondag/10_05_30_id8824.jpg" alt="Foto 1236">
+                    <p>1236</p>
+                </div>
+                <div class="photo-card">
+                    <img src="fotos/0_Zondag/10_05_30_id8824.jpg" alt="Foto 1237">
+                    <p>1237</p>
+                </div>
+                <div class="photo-card">
+                    <img src="fotos/0_Zondag/10_05_30_id8824.jpg" alt="Foto 1238">
+                    <p>1238</p>
+                </div>
+                <div class="photo-card">
+                    <img src="fotos/0_Zondag/10_05_30_id8824.jpg" alt="Foto 1239">
+                    <p>1239</p>
+                </div>
+            </div>
+            <div class="photo-row">
+                <div class="photo-card">
+                    <img src="fotos/0_Zondag/10_05_30_id8824.jpg" alt="Foto 1240">
+                    <p>1240</p>
+                </div>
+                <div class="photo-card">
+                    <img src="fotos/0_Zondag/10_05_30_id8824.jpg" alt="Foto 1241">
+                    <p>1241</p>
+                </div>
+                <div class="photo-card">
+                    <img src="fotos/0_Zondag/10_05_30_id8824.jpg" alt="Foto 1242">
+                    <p>1242</p>
+                </div>
+                <div class="photo-card">
+                    <img src="fotos/0_Zondag/10_05_30_id8824.jpg" alt="Foto 1243">
+                    <p>1243</p>
+                </div>
+                <div class="photo-card">
+                    <img src="fotos/0_Zondag/10_05_30_id8824.jpg" alt="Foto 1244">
+                    <p>1244</p>
+                </div>
+                <div class="photo-card">
+                    <img src="fotos/0_Zondag/10_05_30_id8824.jpg" alt="Foto 1245">
+                    <p>1245</p>
+                </div>
             </div>
         </div>
+        <input type="number" id="photo-id-input" placeholder="Foto Nummer">
+        <button id="confirm-buy">Koop deze Foto</button>
+
+        <div class="overlay" id="confirm-buy-overlay">
+            <div class="popup">
+                <button class="close-btn" id="close-confirm-buy-overlay">&times;</button>
+                <img src="fotos/0_Zondag/10_05_30_id8824.jpg" alt="Foto 1245">
+                <p>1245</p>
+                <select name="photo-size" id="photo-size">
+                    <option value="small">Klein</option>
+                    <option value="medium">Medium</option>
+                    <option value="large">Groot</option>
+                </select>
+                <button id="add-to-cart">Toevoegen aan winkelwagentje</button>
+                <button id="cancel">Annuleren</button>
+            </div>
+        </div>
+
     </main>
     <footer>
 
     </footer>
+    <script>
+        document.getElementById("confirm-buy").addEventListener("click", function() {
+            document.getElementById("confirm-buy-overlay").style.display = "flex";
+        });
+        document.getElementById("close-confirm-buy-overlay").addEventListener("click", function() {
+            document.getElementById("confirm-buy-overlay").style.display = "none";
+        });
+                document.getElementById("cancel").addEventListener("click", function() {
+            document.getElementById("confirm-buy-overlay").style.display = "none";
+        });
+    </script>
 </body>
