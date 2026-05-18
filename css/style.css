@@ -157,3 +157,16 @@
 #confirm-buy:hover {
     background-color: #005000;
 }
+
+.navigate-buttons a {
+    background-color: darkblue;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.navigate-buttons a:hover {
+    background-color: #000050;
+}
