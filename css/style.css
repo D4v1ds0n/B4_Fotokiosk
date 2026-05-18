@@ -117,3 +117,43 @@
     background-color: white;
     color: #333;
 }
+
+.navigate-buttons {
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+}
+
+.navigate-buttons div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.navigate-buttons input {
+    margin-bottom: 10px;
+}
+
+#prev-photo, #next-photo {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+#confirm-buy {
+    background-color: darkgreen;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#confirm-buy:hover {
+    background-color: #005000;
+}
