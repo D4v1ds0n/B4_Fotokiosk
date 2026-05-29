@@ -175,3 +175,114 @@ option {
     justify-content: space-between;
     padding: 10px;
 }
+
+body {
+  margin: 0;
+  padding: 2rem;
+  background-color: #f9fafb;
+  color: #374151;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+  padding: 2rem;
+}
+
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.cart-table th {
+  font-weight: 500;
+  color: #111827;
+  padding-bottom: 0.75rem;
+  border-bottom: 1.5px solid #9ca3af; 
+}
+
+.cart-table td {
+  padding: 1rem 0;
+  border-bottom: 1.5px solid #9ca3af; 
+}
+
+.col-foto { 
+    width: 50%; text-align: left;
+}
+.col-vorm { 
+    text-align: left; 
+}
+.col-prijs { 
+    text-align: right; 
+}
+
+.text-muted { 
+    color: #6b7280; 
+}
+.text-price { 
+    font-weight: 500; color: #111827; 
+    text-align: right; 
+}
+
+
+.product-cell {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.image-placeholder {
+  width: 96px;
+  height: 64px;
+  background-color: #f3f4f6;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.product-title {
+  color: #374151;
+}
+
+.total-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #111827;
+}
+
+.sidebar-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sidebar-text {
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: black;
+  text-align: justify;
+}
+
+.checkout-btn {
+  width: 100%;
+  background-color: #374151;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.75rem 0;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.checkout-btn:hover {
+  background-color: #1f2937;
+}
