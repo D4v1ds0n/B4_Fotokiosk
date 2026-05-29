@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="nl">
 <head>
   <meta charset="UTF-8">
@@ -19,40 +20,11 @@
               <th class="col-prijs">Prijs</th>
             </tr>
           </thead>
-          <body>
-            
-            <tr>
-              <td>
-                <div class="product-cell">
-                  <div class="image-placeholder">
-
-                  </div>
-                  <span class="product-title">Foto #1234</span>
-                </div>
-              </td>
-              <td class="text-muted">Klein formaat</td>
-              <td class="text-price">€5</td>
-            </tr>
-
-            <tr>
-              <td>
-                <div class="product-cell">
-                  <div class="image-placeholder">
-
-                  </div>
-                  <span class="product-title">Foto #1234</span>
-                </div>
-              </td>
-              <td class="text-muted">Klein formaat</td>
-              <td class="text-price">€5</td>
-            </tr>
-
-          </body>
+          <tbody>
+          </tbody>
         </table>
 
         <div class="total-row">
-          <span>Totaal:</span>
-          <span>€10</span>
         </div>
       </div>
 
@@ -60,11 +32,55 @@
         <p class="sidebar-text">
           Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae legendos at vix ad putent delectus delicata usu. Vidit dissentiet eos cu eum an brute copiosae hendrerit. Eos erant dolorum an. Per facer affert ut. Mei iisque mentitum moderatius cu. Sit munere facilis accusam eu dicat falli consulatu at vis. Te facilisis mnesarchum qui posse omnium mediocritatem est cu. Modus argumentum ne qui tation efficiendi in eos. Ei mea falli legere efficiantur et tollit aliquip debitis mei. No deserunt mediocritatem mel.
         </p>
-        <button class="checkout-btn">Afrekenen</button>
+        <button class="checkout-btn" id="checkout-button">Afrekenen</button>
       </div>
 
     </div>
   </div>
+
+  <script>
+    const table = document.querySelector(".cart-table");
+    let totalPrice = 0;
+    if (localStorage.getItem("cart")) {
+      const cart = JSON.parse(localStorage.getItem("cart"));
+      cart.forEach(item => {
+        const row = document.createElement("tr");
+        const price = (item.size === "small" ? 3 : item.size === "medium" ? 5 : 7);
+        totalPrice += price;
+        const size = item.size === "small" ? "Klein" : item.size === "medium" ? "Medium" : "Groot";
+        row.innerHTML = `
+          <td>
+            <div class="product-cell">
+              <img src="${item.photo}" alt="Foto ${item.photo}" class="image-cart">
+              <span class="product-title">Foto #${item.photo.split("_").pop().split(".")[0]}</span>
+            </div>
+          </td>
+          <td class="text-muted">${size} formaat</td>
+          <td class="text-price">€${price}</td>
+        `;
+        table.querySelector("tbody").appendChild(row);
+      });
+      const totalRow = document.createElement("tr");
+      totalRow.innerHTML = `
+        <td colspan="2" class="text-right">Totaal:</td>
+        <td class="text-price">€${totalPrice}</td>
+      `;
+      table.querySelector("tbody").appendChild(totalRow);
+    }
+    else {
+      const row = document.createElement("tr");
+      row.innerHTML = `
+        <td colspan="3" class="text-center">Geen artikelen in de winkelwagen</td>
+      `;
+      table.querySelector("tbody").appendChild(row);
+    }
+
+    document.getElementById("checkout-button").addEventListener("click", function() {
+      alert("Artikelen afrekenen. Totaal: €" + totalPrice);
+      localStorage.removeItem("cart");
+      location.reload();
+    });
+  </script>
 
 </body>
 </html>

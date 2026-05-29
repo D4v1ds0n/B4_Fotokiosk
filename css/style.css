@@ -286,3 +286,10 @@ body {
 .checkout-btn:hover {
   background-color: #1f2937;
 }
+
+
+.image-cart {
+    max-width: 100%;
+    height: 64px;
+    object-fit: cover;
+}
