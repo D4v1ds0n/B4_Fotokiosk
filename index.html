@@ -81,25 +81,21 @@
         </div>
         <div class="navigate-buttons">
             <button id="prev-photo">&#8592;</button>
-            <div>
-                <input type="number" id="photo-id-input" placeholder="Foto Nummer">
-                <button id="confirm-buy">Koop deze Foto</button>
-                <a href="cart.html">Bestellen afronden</a>
-            </div>
+
             <button id="next-photo">&#8594;</button>
         </div>
-
         <div class="overlay" id="confirm-buy-overlay">
             <div class="popup">
                 <button class="close-btn" id="close-confirm-buy-overlay">&times;</button>
-                <img src="fotos/0_Zondag/10_05_30_id8824.jpg" alt="Foto 1245">
-                <p class="photo-id">1245</p>
+                <img src="fotos/0_Zondag/10_05_30_id8824.jpg" alt="Foto 1245" id="confirm-buy-photo">
+                <p class="photo-id" id="confirm-buy-photo-info">1245</p>
                 <div class="buy-options">
                     <select name="photo-size" id="photo-size">
                         <option value="small">Klein</option>
                         <option value="medium">Medium</option>
                         <option value="large">Groot</option>
                     </select>
+                    <p id="price">&euro; 3,00</p>
                     <button id="add-to-cart">Toevoegen aan winkelwagentje</button>
                     <button id="cancel">Annuleren</button>
                 </div>

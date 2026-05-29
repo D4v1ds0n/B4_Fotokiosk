@@ -170,3 +170,8 @@
 .navigate-buttons a:hover {
     background-color: #000050;
 }
+option {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
