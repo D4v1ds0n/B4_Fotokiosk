@@ -11,6 +11,20 @@
         <h1>Foto Kiosk</h1>
     </header>
     <main>
+        <select name="day" id="day-select">
+            <option value="0_Zondag">Zondag</option>
+            <option value="1_Maandag">Maandag</option>
+            <option value="2_Dinsdag">Dinsdag</option>
+            <option value="3_Woensdag">Woensdag</option>
+            <option value="4_Donderdag">Donderdag</option>
+            <option value="5_Vrijdag">Vrijdag</option>
+            <option value="6_Zaterdag">Zaterdag</option>
+        </select>
+        <script>
+            const today = new Date();
+            const day = today.getDay();
+            document.getElementById("day-select").value = `${day}_${document.getElementById("day-select").options[day].text}`;
+        </script>
         <div class="photos">
             <div class="photo-row">
                 <div class="photo-card">
