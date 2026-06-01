@@ -1,11 +1,4 @@
 let photos = [];
-if (localStorage.getItem("cart")) {
-    cart = JSON.parse(localStorage.getItem("cart"));
-}
-else {
-    cart = [];
-    localStorage.setItem("ycart", JSON.stringify(cart));
-}
 
 selectedPhoto = null;
 
@@ -101,6 +94,7 @@ function parseFileName(fileName) {
 document.getElementById("add-to-cart").addEventListener("click", function() {
     if (selectedPhoto) {
         const selectedSize = document.getElementById("photo-size").value;
+        const cart = JSON.parse(localStorage.getItem("cart") || "[]");
         cart.push({ photo: selectedPhoto, size: selectedSize });
         localStorage.setItem("cart", JSON.stringify(cart));
         alert("Foto toegevoegd aan winkelwagentje");
