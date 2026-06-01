@@ -18,6 +18,7 @@
               <th class="col-foto">Foto</th>
               <th class="col-vorm">Vorm</th>
               <th class="col-prijs">Prijs</th>
+              <th class="col-remove"></th>
             </tr>
           </thead>
           <tbody>
@@ -57,6 +58,9 @@
           </td>
           <td class="text-muted">${size} formaat</td>
           <td class="text-price">€${price}</td>
+          <td class="text-remove">
+            <button class="remove-btn" data-photo="${item.photo}">Verwijderen</button>
+          </td>
         `;
         table.querySelector("tbody").appendChild(row);
       });
@@ -79,6 +83,16 @@
       alert("Artikelen afrekenen. Totaal: €" + totalPrice);
       localStorage.removeItem("cart");
       window.location.href = "index.html";
+    });
+
+    document.querySelectorAll(".remove-btn").forEach(button => {
+      button.addEventListener("click", function() {
+        const photo = this.getAttribute("data-photo");
+        const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+        const updatedCart = cart.filter(item => item.photo !== photo);
+        localStorage.setItem("cart", JSON.stringify(updatedCart));
+        window.location.reload();
+      });
     });
   </script>
 
