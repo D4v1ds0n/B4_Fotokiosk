@@ -75,9 +75,9 @@ function loadPhotos() {
         const photoIndex = index + firstPhotoShown - 1;
         // De src van de foto wordt ingesteld
         const src = photos[photoIndex];
-        // Als de src niet bestaat, wordt de functie verlaten. Dit zou als het goed it nooit moeten gebeuren.
+        // Als de src niet bestaat, wordt de functie verlaten. Dit zou als het goed is nooit moeten gebeuren.
         if (!src) return;
-        // Maakt de photo en de bijbehorende informatie aan
+        // Maakt de foto en de bijbehorende informatie aan
         const img = document.createElement("img");
         const photoInfo = document.createElement("p");
         // Haalt de informatie uit de bestandsnaam
