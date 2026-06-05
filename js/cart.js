@@ -1,6 +1,6 @@
 const table = document.querySelector(".cart-table");
 let totalPrice = 0;
-// Checkt of er artikelen in de winkelwagen zijn (lege winkelwagen is opgeslagen als {}, dus alleen als er meer dan 2 tekens zijn)
+// Checkt of er artikelen in de winkelwagen zijn (lege winkelwagen is opgeslagen als [], dus alleen als er meer dan 2 tekens zijn)
 if (localStorage.getItem("cart") && localStorage.getItem("cart").length > 2) {
     // Laad winkelwagen van localStorage
     const cart = JSON.parse(localStorage.getItem("cart"));
