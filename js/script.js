@@ -51,7 +51,7 @@ async function loadDay() {
             .split('\n')
             .map(line => line.trim())
             .filter(line => line.length > 0);
-        // De eerste photo wordt ingestelt
+        // De eerste foto wordt ingestelt
         firstPhotoShown = 1;
         // De foto's worden geladen
         loadPhotos();

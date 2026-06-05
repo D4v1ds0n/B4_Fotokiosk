@@ -4,9 +4,9 @@ let totalPrice = 0;
 if (localStorage.getItem("cart") && localStorage.getItem("cart").length > 2) {
     // Laad winkelwagen van localStorage
     const cart = JSON.parse(localStorage.getItem("cart"));
-    // Loop door de artikelen in de winkelwagen
+    // Loopt door de artikelen in de winkelwagen
     cart.forEach(item => {
-        // Maak een nieuwe rij aan voor het artikel
+        // Maakt een nieuwe rij aan voor het artikel
         const row = document.createElement("tr");
         // Berekent de prijs
         const price = (item.size === "small" ? 3 : item.size === "medium" ? 5 : 7);
@@ -26,10 +26,10 @@ if (localStorage.getItem("cart") && localStorage.getItem("cart").length > 2) {
             <button class="remove-btn" data-photo="${item.photo}">Verwijderen</button>
             </td>
         `;
-        // Voeg de rij toe aan de tabel
+        // Voegt de rij toe aan de tabel
         table.querySelector("tbody").appendChild(row);
     });
-    // Onderste rij  met totaalprijs wordt toegevoegd
+    // Onderste rij met totaalprijs wordt toegevoegd
     const totalRow = document.createElement("tr");
     totalRow.innerHTML = `
     <td colspan="2" class="text-right">Totaal:</td>
